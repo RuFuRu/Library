@@ -54,15 +54,20 @@ section:nth-child(1) {
 
 .pop-up {
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(0);
+    transition: 400ms ease-in-out;
     border: 3px solid black;
     border-radius: 10px;
     padding: 10px 50px;
     font-size: 1.3rem;
     background-color: var(--whiteish);
     z-index: 10;
+}
+
+.pop-up.active {
+    transform: translate(-50%,-50%) scale(1);
 }
 
 form > h2 {
@@ -111,4 +116,18 @@ div > input {
 
 .overlay {
     display: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: 400ms ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
