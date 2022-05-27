@@ -8,7 +8,7 @@ function book() {
     //constructor
 }
 
-function displaySomeBooks(library) {
+/*function displaySomeBooks(library) {
     const container = document.querySelector('main');
     let element;
     for(let i = 0; i < library.length; i++) {
@@ -16,6 +16,4 @@ function displaySomeBooks(library) {
         element.textContent = library[i];
         container.appendChild(element);
     }
-}
-
-displaySomeBooks(myLibrary);
+}*/
