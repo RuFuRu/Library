@@ -41,7 +41,7 @@ section:nth-child(1) {
     align-items: center;
 }
 
-.addBook {
+.add-book {
     padding: 1rem 1.25rem; 
     border-radius: 20px;
     border: 3px dashed black;
@@ -93,6 +93,7 @@ div > input {
 .pop-up-radio-container {
     display: flex;
     column-gap: 5px;
+    margin-top: 10px;
 }
 
 .pop-up-radio-container > label[for="read"] {
@@ -101,6 +102,7 @@ div > input {
 
 .pop-up-btn-container {
     text-align: center;
+    margin-top: 15px;
 }
 
 .pop-up-btn {
