@@ -16,28 +16,7 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-popUpBtn.addEventListener('click', () => {
-    addBook();
-
-    const bookCardContainer = document.createElement('div');
-    const author = document.createElement('h3');
-    const title = document.createElement('h3');
-    const genre = document.createElement('h3');
-    const numOfPages = document.createElement('h3');
-    const ReadorNot = document.createElement('h3');
-
-    author.textContent = myLibrary[0].author;
-    title.textContent = myLibrary[0].title;
-    genre.textContent = myLibrary[0].genre;
-    numOfPages.textContent = myLibrary[0].numOfPages;
-
-    libraryCardContainer.appendChild(bookCardContainer);
-    bookCardContainer.appendChild(author);
-    bookCardContainer.appendChild(title);
-    bookCardContainer.appendChild(genre);
-    bookCardContainer.appendChild(numOfPages);
-    /*bookCardContainer.appendChild(ReadorNot);*/
-})
+popUpBtn.addEventListener('click', addCard);
 
 let myLibrary: any[] = [];
 
@@ -65,4 +44,26 @@ function addBook() {
     console.log(myLibrary)
 }
 
+function addCard() {
+    addBook();
+
+    const bookCardContainer = document.createElement('div');
+    const author = document.createElement('h3');
+    const title = document.createElement('h3');
+    const genre = document.createElement('h3');
+    const numOfPages = document.createElement('h3');
+    const ReadorNot = document.createElement('h3');
+
+    author.textContent = myLibrary[0].author;
+    title.textContent = myLibrary[0].title;
+    genre.textContent = myLibrary[0].genre;
+    numOfPages.textContent = myLibrary[0].numOfPages;
+
+    libraryCardContainer.appendChild(bookCardContainer);
+    bookCardContainer.appendChild(author);
+    bookCardContainer.appendChild(title);
+    bookCardContainer.appendChild(genre);
+    bookCardContainer.appendChild(numOfPages);
+    /*bookCardContainer.appendChild(ReadorNot);*/
+}
 // console.log(myLibrary);
