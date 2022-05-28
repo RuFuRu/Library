@@ -43,12 +43,12 @@ let myLibrary: any[] = [];
 
 class Book {
     constructor(
-        public author: string,
-        public title: string,
-        public genre: string,
-        public numOfPages: number,
-        public readYes: boolean,
-        public readNo: boolean,
+        readonly author: string,
+        readonly title: string,
+        readonly genre: string,
+        readonly numOfPages: number,
+        readonly readYes: boolean,
+        readonly readNo: boolean,
     ) {}
 }
 
