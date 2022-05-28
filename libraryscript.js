@@ -10,3 +10,12 @@ overlay === null || overlay === void 0 ? void 0 : overlay.addEventListener('clic
     popUp === null || popUp === void 0 ? void 0 : popUp.classList.remove('active');
     overlay.classList.remove('active');
 });
+class Book {
+    constructor(author, title, genre, numOfPages, read) {
+        this.author = author;
+        this.title = title;
+        this.genre = genre;
+        this.numOfPages = numOfPages;
+        this.read = read;
+    }
+}

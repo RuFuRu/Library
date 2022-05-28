@@ -12,3 +12,15 @@ overlay?.addEventListener('click', () => {
     popUp?.classList.remove('active');
     overlay.classList.remove('active');
 })
+
+
+class Book {
+    constructor(
+        public author: string,
+        public title: string,
+        public genre: string,
+        public numOfPages: number,
+        public read: boolean,
+    ) {}
+}
+
