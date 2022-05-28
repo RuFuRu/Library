@@ -40,7 +40,7 @@ function addBook() {
     const answerYes = document.querySelector('.yes') as HTMLInputElement;
     const answerNo = document.querySelector('.no') as HTMLInputElement;
     
-    let object = new Book(author.value,title.value,genre.value,pageNum.valueAsNumber,answerYes.checked,answerNo.checked)
+    let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber,answerYes.checked,answerNo.checked)
     myLibrary.push(object);
     console.log(myLibrary);
 
@@ -52,21 +52,34 @@ function addCard() {
     addBook();
 
     const bookCardContainer = document.createElement('div');
+    const colourStrip = document.createElement('div');
     const author = document.createElement('h3');
     const title = document.createElement('h3');
     const genre = document.createElement('h3');
     const numOfPages = document.createElement('h3');
     const ReadorNot = document.createElement('h3');
+    let hr: HTMLHRElement[] = [];
 
+    for(let i = 0; i < 4; i++) {
+        hr.push(document.createElement('hr'));
+    }
+
+    bookCardContainer.classList.add('library-card');
+    colourStrip.classList.add('colour-strip');
     author.textContent = myLibrary[counter].author;
     title.textContent = myLibrary[counter].title;
     genre.textContent = myLibrary[counter].genre;
     numOfPages.textContent = myLibrary[counter].numOfPages;
 
+    console.log(hr[0]);
     libraryCardContainer.appendChild(bookCardContainer);
-    bookCardContainer.appendChild(author);
+    bookCardContainer.appendChild(colourStrip);
     bookCardContainer.appendChild(title);
+    bookCardContainer.appendChild(hr[0]);
+    bookCardContainer.appendChild(author);
+    bookCardContainer.appendChild(hr[1]);
     bookCardContainer.appendChild(genre);
+    bookCardContainer.appendChild(hr[2]);
     bookCardContainer.appendChild(numOfPages);
     /*bookCardContainer.appendChild(ReadorNot);*/
 }
