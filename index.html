@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="libraryscript.ts" defer></script>
+    <script src="libraryscript.js" defer></script>
 </head>
 <body>
     <header>
@@ -36,12 +36,12 @@
             </div>
             <div>
                 <label for="pageNum">Num. of pages</label><br>
-                <input type="text" id="pageNum">
+                <input type="number" id="pageNum">
             </div>
             <div class="pop-up-radio-container">
                 <label for="read">Read ?</label>
-                <input type="radio" name="read" id="read">Yes
-                <input type="radio" name="read" id="read">No
+                <input type="radio" name="read" id="read" class="yes">Yes
+                <input type="radio" name="read" id="read" class="no">No
             </div>
             <div class="pop-up-btn-container">
                 <button type="button" class="pop-up-btn">Submit</button>
