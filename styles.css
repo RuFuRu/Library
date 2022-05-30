@@ -45,7 +45,7 @@ section:nth-child(1) {
 section:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
-    grid-auto-rows: 200px;
+    grid-auto-rows: 230px;
     gap: 30px;
     padding: 2rem 4rem 2rem 5rem;
 }
@@ -60,15 +60,17 @@ section:nth-child(2) {
     flex-direction: column;
     justify-content: space-between;
     column-gap: 20px;
-    font-family: 'Montserrat', sans-serif !important;
     font-size: 1.1rem;
     position: relative;
 
 }
 
-.library-card > h3:nth-child(1) {
-    font-weight: 800;
+.library-card > h3:nth-child(2) {
+    font-weight: 900;
     font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+
 }
 
 .library-card > h3 {
