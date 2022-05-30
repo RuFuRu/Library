@@ -23,7 +23,7 @@ class Book {
         this.numOfPages = numOfPages;
     }
 }
-function addBook() {
+function addCard() {
     const author = document.querySelector('#author');
     const title = document.querySelector('#title');
     const genre = document.querySelector('#genre');
@@ -38,17 +38,11 @@ function addBook() {
     console.log(myLibrary);
     counter++;
     console.log(counter);
-}
-function addCard() {
-    addBook();
-    if (myLibrary[counter] === undefined || null) {
-        return;
-    }
     const bookCardContainer = document.createElement('div');
     const colourStrip = document.createElement('div');
-    const author = document.createElement('h3');
-    const title = document.createElement('h3');
-    const genre = document.createElement('h3');
+    const authorDiv = document.createElement('h3');
+    const titleDiv = document.createElement('h3');
+    const genreDiv = document.createElement('h3');
     const numOfPages = document.createElement('h3');
     const ReadorNot = document.createElement('h3');
     let hr = [];
@@ -58,18 +52,18 @@ function addCard() {
     bookCardContainer.classList.add('library-card');
     colourStrip.classList.add('colour-strip');
     colourStrip.setAttribute('style', `background-color: ${colourRandomizer()}`);
-    author.textContent = myLibrary[counter].author;
-    title.textContent = myLibrary[counter].title;
-    genre.textContent = myLibrary[counter].genre;
+    authorDiv.textContent = myLibrary[counter].author;
+    titleDiv.textContent = myLibrary[counter].title;
+    genreDiv.textContent = myLibrary[counter].genre;
     numOfPages.textContent = myLibrary[counter].numOfPages;
     console.log(hr[0]);
     libraryCardContainer.appendChild(bookCardContainer);
     bookCardContainer.appendChild(colourStrip);
-    bookCardContainer.appendChild(title);
+    bookCardContainer.appendChild(titleDiv);
     bookCardContainer.appendChild(hr[0]);
-    bookCardContainer.appendChild(author);
+    bookCardContainer.appendChild(authorDiv);
     bookCardContainer.appendChild(hr[1]);
-    bookCardContainer.appendChild(genre);
+    bookCardContainer.appendChild(genreDiv);
     bookCardContainer.appendChild(hr[2]);
     bookCardContainer.appendChild(numOfPages);
     /*bookCardContainer.appendChild(ReadorNot);*/
