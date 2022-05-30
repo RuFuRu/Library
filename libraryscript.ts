@@ -18,9 +18,6 @@ overlay.addEventListener('click', () => {
 
 popUpBtn.addEventListener('click', addCard);
 
-let myLibrary: any[] = [];
-let counter: number = -1;
-
 class Book {
     constructor(
         readonly author: string,
@@ -32,6 +29,9 @@ class Book {
 
 
 function addCard() {
+    let myLibrary: any[] = [];
+    let counter: number = -1;
+
     const author = document.querySelector('#author') as HTMLInputElement;
     const title = document.querySelector('#title') as HTMLInputElement;
     const genre = document.querySelector('#genre') as HTMLInputElement;

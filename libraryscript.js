@@ -13,8 +13,6 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 popUpBtn.addEventListener('click', addCard);
-let myLibrary = [];
-let counter = -1;
 class Book {
     constructor(author, title, genre, numOfPages) {
         this.author = author;
@@ -24,6 +22,8 @@ class Book {
     }
 }
 function addCard() {
+    let myLibrary = [];
+    let counter = -1;
     const author = document.querySelector('#author');
     const title = document.querySelector('#title');
     const genre = document.querySelector('#genre');
