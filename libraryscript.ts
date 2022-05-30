@@ -45,10 +45,8 @@ function addCard() {
     
     let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber)
     myLibrary.push(object);
-    console.log(myLibrary);
-
     counter++;
-    console.log(counter);
+
 
     const bookCardContainer = document.createElement('div');
     const colourStrip = document.createElement('div');
