@@ -27,8 +27,6 @@ class Book {
         readonly title: string,
         readonly genre: string,
         readonly numOfPages: number,
-        readonly readYes: boolean,
-        readonly readNo: boolean,
     ) {}
 }
 
@@ -37,10 +35,14 @@ function addBook() {
     const title = document.querySelector('#title') as HTMLInputElement;
     const genre = document.querySelector('#genre') as HTMLInputElement;
     const pageNum = document.querySelector('#pageNum') as HTMLInputElement;
-    const answerYes = document.querySelector('.yes') as HTMLInputElement;
-    const answerNo = document.querySelector('.no') as HTMLInputElement;
+    // const answerYes = document.querySelector('.yes') as HTMLInputElement;
+    // const answerNo = document.querySelector('.no') as HTMLInputElement;
+
+    if((author.value && title.value && genre.value && pageNum.value) === '')  {
+        return;
+    }
     
-    let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber,answerYes.checked,answerNo.checked)
+    let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber)
     myLibrary.push(object);
     console.log(myLibrary);
 
@@ -50,6 +52,10 @@ function addBook() {
 
 function addCard() {
     addBook();
+
+    if(myLibrary[counter] === undefined || null ) {
+        return;
+    }
 
     const bookCardContainer = document.createElement('div');
     const colourStrip = document.createElement('div');

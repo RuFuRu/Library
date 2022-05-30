@@ -16,13 +16,11 @@ popUpBtn.addEventListener('click', addCard);
 let myLibrary = [];
 let counter = -1;
 class Book {
-    constructor(author, title, genre, numOfPages, readYes, readNo) {
+    constructor(author, title, genre, numOfPages) {
         this.author = author;
         this.title = title;
         this.genre = genre;
         this.numOfPages = numOfPages;
-        this.readYes = readYes;
-        this.readNo = readNo;
     }
 }
 function addBook() {
@@ -30,9 +28,12 @@ function addBook() {
     const title = document.querySelector('#title');
     const genre = document.querySelector('#genre');
     const pageNum = document.querySelector('#pageNum');
-    const answerYes = document.querySelector('.yes');
-    const answerNo = document.querySelector('.no');
-    let object = new Book(author.value, (title.value).toUpperCase(), genre.value, pageNum.valueAsNumber, answerYes.checked, answerNo.checked);
+    // const answerYes = document.querySelector('.yes') as HTMLInputElement;
+    // const answerNo = document.querySelector('.no') as HTMLInputElement;
+    if ((author.value && title.value && genre.value && pageNum.value) === '') {
+        return;
+    }
+    let object = new Book(author.value, (title.value).toUpperCase(), genre.value, pageNum.valueAsNumber);
     myLibrary.push(object);
     console.log(myLibrary);
     counter++;
@@ -40,6 +41,9 @@ function addBook() {
 }
 function addCard() {
     addBook();
+    if (myLibrary[counter] === undefined || null) {
+        return;
+    }
     const bookCardContainer = document.createElement('div');
     const colourStrip = document.createElement('div');
     const author = document.createElement('h3');
