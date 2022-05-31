@@ -6,6 +6,7 @@ const libraryCardContainer = document.querySelector('section:nth-child(2)') as H
 
 
 
+
 addBookBtn.addEventListener('click', () => {
     popUp.classList.add('active');
     overlay.classList.add('active');
@@ -18,6 +19,10 @@ overlay.addEventListener('click', () => {
 
 popUpBtn.addEventListener('click', addCard);
 
+
+let myLibrary: any[] = [];
+let counter: number = -1;
+
 class Book {
     constructor(
         readonly author: string,
@@ -29,9 +34,6 @@ class Book {
 
 
 function addCard() {
-    let myLibrary: any[] = [];
-    let counter: number = -1;
-
     const author = document.querySelector('#author') as HTMLInputElement;
     const title = document.querySelector('#title') as HTMLInputElement;
     const genre = document.querySelector('#genre') as HTMLInputElement;
@@ -78,5 +80,11 @@ function addCard() {
     readTextAndDeleteContainer.appendChild(readYesText);
     readTextAndDeleteContainer.appendChild(readNoText);
     readTextAndDeleteContainer.appendChild(delbtn);
+
+    
+    delbtn.addEventListener('click', () => {
+        libraryCardContainer.removeChild(bookCardContainer);
+    })
 }
+
 
