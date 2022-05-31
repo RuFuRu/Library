@@ -35,38 +35,8 @@ function addCard() {
     }
     let object = new Book(author.value, (title.value).toUpperCase(), genre.value, pageNum.valueAsNumber);
     myLibrary.push(object);
-    console.log(myLibrary);
     counter++;
-    console.log(counter);
     const bookCardContainer = document.createElement('div');
-    const colourStrip = document.createElement('div');
-    const authorDiv = document.createElement('h3');
-    const titleDiv = document.createElement('h3');
-    const genreDiv = document.createElement('h3');
-    const numOfPages = document.createElement('h3');
-    const ReadorNot = document.createElement('h3');
-    let hr = [];
-    for (let i = 0; i < 4; i++) {
-        hr.push(document.createElement('hr'));
-    }
-    bookCardContainer.classList.add('library-card');
-    colourStrip.classList.add('colour-strip');
-    colourStrip.setAttribute('style', `background-color: ${colourRandomizer()}`);
-    authorDiv.textContent = myLibrary[counter].author;
-    titleDiv.textContent = myLibrary[counter].title;
-    genreDiv.textContent = myLibrary[counter].genre;
-    numOfPages.textContent = myLibrary[counter].numOfPages;
-    console.log(hr[0]);
-    libraryCardContainer.appendChild(bookCardContainer);
-    bookCardContainer.appendChild(colourStrip);
-    bookCardContainer.appendChild(titleDiv);
-    bookCardContainer.appendChild(hr[0]);
-    bookCardContainer.appendChild(authorDiv);
-    bookCardContainer.appendChild(hr[1]);
-    bookCardContainer.appendChild(genreDiv);
-    bookCardContainer.appendChild(hr[2]);
-    bookCardContainer.appendChild(numOfPages);
-    /*bookCardContainer.appendChild(ReadorNot);*/
 }
 // console.log(myLibrary);
 function colourRandomizer() {
