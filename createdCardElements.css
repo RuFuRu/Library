@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap');
+
+.book-card-container {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    column-gap: 20px;
+}
+
+.title-text { 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    margin-right: auto;
+}
+
+.read-text-and-delete-container {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.read-yes-text {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.read-no-text {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.del-btn {
+    background-image: url('images/delete.png');
+    width: 24px;
+    height: 24px;
+}

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 
 :root {
     --default-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -44,47 +43,10 @@ section:nth-child(1) {
 
 section:nth-child(2) {
     display: grid;
-    grid-auto-rows: 230px;
+    grid-template-columns: minmax(600px, 1000px);
+    grid-auto-rows: 50px;
     margin: 0 auto;
     /*padding: 2rem 4rem 2rem 5rem;*/
-}
-
-.library-card {
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 1rem 2rem;
-    text-align: center;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    column-gap: 20px;
-    font-size: 1.1rem;
-    position: relative;
-
-}
-
-.library-card > h3:nth-child(2) {
-    font-weight: 900;
-    font-style: italic;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-
-}
-
-.library-card > h3 {
-    font-weight: 400;
-}
-
-.colour-strip {
-    position: absolute;
-    width: 100%;
-    height: 15px;
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;
-    /*background-color: blue;*/
-    left: 0;
-    top: 0px;
 }
 
 .add-book {

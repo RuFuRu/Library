@@ -23,7 +23,7 @@ class Book {
         readonly author: string,
         readonly title: string,
         readonly genre: string,
-        readonly numOfPages: number,
+        readonly pageNum: number,
     ) {}
 }
 
@@ -49,7 +49,35 @@ function addCard() {
 
 
     const bookCardContainer = document.createElement('div');
-    
+    const titleText = document.createElement('div');
+    const authorText = document.createElement('div');
+    const genreText = document.createElement('div');
+    const pageNumText = document.createElement('div');
+    const readTextAndDeleteContainer = document.createElement('div');
+    const readYesText = document.createElement('div');
+    const readNoText = document.createElement('div');
+    const delbtn = document.createElement('div');
+
+    bookCardContainer.classList.add('book-card-container');
+    titleText.textContent = myLibrary[counter].title;
+    titleText.classList.add('title-text');
+    authorText.textContent = myLibrary[counter].author;
+    genreText.textContent = myLibrary[counter].genre;
+    pageNumText.textContent = myLibrary[counter].pageNum;
+    readTextAndDeleteContainer.classList.add('read-text-and-delete-container');
+    readYesText.classList.add('read-yes-text');
+    readNoText.classList.add('read-no-text');
+    delbtn.classList.add('del-btn');
+
+    libraryCardContainer.appendChild(bookCardContainer);
+    bookCardContainer.appendChild(titleText);
+    bookCardContainer.appendChild(authorText);
+    bookCardContainer.appendChild(genreText);
+    bookCardContainer.appendChild(pageNumText);
+    bookCardContainer.appendChild(readTextAndDeleteContainer);
+    readTextAndDeleteContainer.appendChild(readYesText);
+    readTextAndDeleteContainer.appendChild(readNoText);
+    readTextAndDeleteContainer.appendChild(delbtn);
 }
 // console.log(myLibrary);
 
