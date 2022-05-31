@@ -16,7 +16,7 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: minmax(100px, 1fr) 6.5fr;
+    grid-template-rows: 120px 6.5fr;
     background-color: hsl(220, 27%, 96%);
 }
 
@@ -32,7 +32,7 @@ header {
 main {
     margin: 1rem;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 120px 6fr;
 }
 
 section:nth-child(1) {

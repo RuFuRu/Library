@@ -1,0 +1,25 @@
+@media (max-width: 788px) {
+    section:nth-child(2) {
+        grid-template-columns: minmax(200px, 1000px);
+        grid-auto-rows: min-content;
+    }
+
+    .book-card-container {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .read-text-and-delete-container {
+        margin-left: 0;
+        column-gap: 5px;
+        width: 145px;
+    }
+
+    .title-text {
+        margin-right: 0;
+    }
+
+    .pop-up {
+        top: 50%;
+    }
+}
