@@ -16,11 +16,12 @@ popUpBtn.addEventListener('click', addCard);
 let myLibrary = [];
 let counter = -1;
 class Book {
-    constructor(author, title, genre, pageNum) {
+    constructor(author, title, genre, pageNum, readYes) {
         this.author = author;
         this.title = title;
         this.genre = genre;
         this.pageNum = pageNum;
+        this.readYes = readYes;
     }
 }
 function addCard() {
@@ -28,12 +29,11 @@ function addCard() {
     const title = document.querySelector('#title');
     const genre = document.querySelector('#genre');
     const pageNum = document.querySelector('#pageNum');
-    // const answerYes = document.querySelector('.yes') as HTMLInputElement;
-    // const answerNo = document.querySelector('.no') as HTMLInputElement;
+    const answerYes = document.querySelector('.yes');
     if ((author.value && title.value && genre.value && pageNum.value) === '') {
         return;
     }
-    let object = new Book(author.value, (title.value).toUpperCase(), genre.value, pageNum.valueAsNumber);
+    let object = new Book(author.value, (title.value).toUpperCase(), genre.value, pageNum.valueAsNumber, answerYes.checked);
     myLibrary.push(object);
     counter++;
     const bookCardContainer = document.createElement('div');
@@ -45,16 +45,29 @@ function addCard() {
     const readYesText = document.createElement('div');
     const readNoText = document.createElement('div');
     const delbtn = document.createElement('div');
+    const readYesTooltip = document.createElement('span');
+    const readNoTooltip = document.createElement('span');
     bookCardContainer.classList.add('book-card-container');
     titleText.textContent = myLibrary[counter].title;
     titleText.classList.add('title-text');
     authorText.textContent = myLibrary[counter].author;
     genreText.textContent = myLibrary[counter].genre;
     pageNumText.textContent = myLibrary[counter].pageNum;
-    readTextAndDeleteContainer.classList.add('read-text-and-delete-container');
+    readTextAndDeleteContainer.classList.add('read-text-and-delete-container', 'tooltip');
     readYesText.classList.add('read-yes-text');
+    readYesTooltip.classList.add('tooltiptext');
+    readYesTooltip.textContent = "Have read";
     readNoText.classList.add('read-no-text');
+    readNoTooltip.classList.add('tooltiptext');
+    readNoTooltip.textContent = "Have not read";
     delbtn.classList.add('del-btn');
+    console.log(myLibrary[counter].readYes);
+    if (myLibrary[counter].readYes === true) {
+        readYesText.setAttribute('style', 'background-color: green');
+    }
+    else if (myLibrary[counter].readYes === false) {
+        readNoText.setAttribute('style', 'background-color: red');
+    }
     libraryCardContainer.appendChild(bookCardContainer);
     bookCardContainer.appendChild(titleText);
     bookCardContainer.appendChild(authorText);
@@ -64,7 +77,17 @@ function addCard() {
     readTextAndDeleteContainer.appendChild(readYesText);
     readTextAndDeleteContainer.appendChild(readNoText);
     readTextAndDeleteContainer.appendChild(delbtn);
+    readTextAndDeleteContainer.appendChild(readYesTooltip);
+    readTextAndDeleteContainer.appendChild(readNoTooltip);
     delbtn.addEventListener('click', () => {
         libraryCardContainer.removeChild(bookCardContainer);
+    });
+    readYesText.addEventListener('click', () => {
+        readYesText.setAttribute('style', 'background-color: green');
+        readNoText.setAttribute('style', 'background-color: none');
+    });
+    readNoText.addEventListener('click', () => {
+        readNoText.setAttribute('style', 'background-color: red');
+        readYesText.setAttribute('style', 'background-color: none');
     });
 }

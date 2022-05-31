@@ -29,6 +29,7 @@ class Book {
         readonly title: string,
         readonly genre: string,
         readonly pageNum: number,
+        readonly readYes: boolean,
     ) {}
 }
 
@@ -38,14 +39,13 @@ function addCard() {
     const title = document.querySelector('#title') as HTMLInputElement;
     const genre = document.querySelector('#genre') as HTMLInputElement;
     const pageNum = document.querySelector('#pageNum') as HTMLInputElement;
-    // const answerYes = document.querySelector('.yes') as HTMLInputElement;
-    // const answerNo = document.querySelector('.no') as HTMLInputElement;
+    const answerYes = document.querySelector('.yes') as HTMLInputElement;
 
     if((author.value && title.value && genre.value && pageNum.value) === '')  {
         return;
     }
     
-    let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber)
+    let object = new Book(author.value,(title.value).toUpperCase(),genre.value,pageNum.valueAsNumber,answerYes.checked)
     myLibrary.push(object);
     counter++;
 
@@ -71,6 +71,15 @@ function addCard() {
     readNoText.classList.add('read-no-text');
     delbtn.classList.add('del-btn');
 
+    console.log(myLibrary[counter].readYes);
+
+    if(myLibrary[counter].readYes === true) {
+        readYesText.setAttribute('style', 'background-color: green');
+    }
+    else if(myLibrary[counter].readYes === false){
+        readNoText.setAttribute('style', 'background-color: red');
+    }
+
     libraryCardContainer.appendChild(bookCardContainer);
     bookCardContainer.appendChild(titleText);
     bookCardContainer.appendChild(authorText);
@@ -84,7 +93,17 @@ function addCard() {
     
     delbtn.addEventListener('click', () => {
         libraryCardContainer.removeChild(bookCardContainer);
-    })
+    });
+
+    readYesText.addEventListener('click', () => {
+        readYesText.setAttribute('style', 'background-color: green');
+        readNoText.setAttribute('style', 'background-color: none');
+    });
+
+    readNoText.addEventListener('click', () => {
+        readNoText.setAttribute('style', 'background-color: red');
+        readYesText.setAttribute('style', 'background-color: none');
+    });
 }
 
 
