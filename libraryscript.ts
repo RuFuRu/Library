@@ -68,16 +68,18 @@ function addCard() {
     pageNumText.textContent = myLibrary[counter].pageNum;
     readTextAndDeleteContainer.classList.add('read-text-and-delete-container');
     readYesText.classList.add('read-yes-text');
+    readYesText.textContent = "Have read";
     readNoText.classList.add('read-no-text');
+    readNoText.textContent = "Have not read";
     delbtn.classList.add('del-btn');
 
     console.log(myLibrary[counter].readYes);
 
     if(myLibrary[counter].readYes === true) {
-        readYesText.setAttribute('style', 'background-color: green');
+        readYesText.setAttribute('style', 'color: green');
     }
     else if(myLibrary[counter].readYes === false){
-        readNoText.setAttribute('style', 'background-color: red');
+        readNoText.setAttribute('style', 'color: red');
     }
 
     libraryCardContainer.appendChild(bookCardContainer);
@@ -96,13 +98,13 @@ function addCard() {
     });
 
     readYesText.addEventListener('click', () => {
-        readYesText.setAttribute('style', 'background-color: green');
-        readNoText.setAttribute('style', 'background-color: none');
+        readYesText.setAttribute('style', 'color: green');
+        readNoText.setAttribute('style', 'color: black');
     });
 
     readNoText.addEventListener('click', () => {
-        readNoText.setAttribute('style', 'background-color: red');
-        readYesText.setAttribute('style', 'background-color: none');
+        readNoText.setAttribute('style', 'color: red');
+        readYesText.setAttribute('style', 'color: black');
     });
 }
 

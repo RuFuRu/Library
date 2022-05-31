@@ -6,7 +6,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0.5rem 2rem;
     column-gap: 30px;
 }
@@ -16,6 +16,7 @@
     font-weight: 800;
     font-style: italic;
     margin-right: auto;
+    font-size: 1.3rem;
 }
 
 .read-text-and-delete-container {
@@ -24,21 +25,16 @@
     justify-content: space-between;
     align-items: center;
     margin-left: auto;
+    column-gap: 10px;
 }
 
 .read-yes-text {
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
 .read-no-text {
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
