@@ -65,15 +65,3 @@ function addCard() {
     readTextAndDeleteContainer.appendChild(readNoText);
     readTextAndDeleteContainer.appendChild(delbtn);
 }
-// console.log(myLibrary);
-function colourRandomizer() {
-    let colourArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
-    let randomColourStr = "#";
-    for (let i = 0; i < 6; i++) {
-        randomColourStr += colourArr[randomInt(0, 15)];
-    }
-    return randomColourStr;
-}
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
